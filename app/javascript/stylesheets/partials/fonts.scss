@@ -1,0 +1,7 @@
+h1, h2 {
+  @apply font-headings font-extrabold;
+};
+
+p, li, a, span, table, small, button  {
+  @apply font-body;
+};

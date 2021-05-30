@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:ital,wght@0,900;1,900&display=swap');
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+// FONTAWESOME USAGE:
+// <i class="fab fa-facebook-f fa-3x mx-2"></i>
+// <%= fa_icon "baby", text: "BB", class: 'mx-2', size: '3x' %>
+@import '@fortawesome/fontawesome-free';
+
+// @import "./custom";
+@import "./partials/fonts";
