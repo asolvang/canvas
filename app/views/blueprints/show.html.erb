@@ -1,16 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<%= turbo_stream_from @blueprint %>
+
 <%= turbo_frame_tag "blueprint" do %>
-  <div>
-    <h1>
-      <%= @blueprint.name %>
-    </h1>
-    <p>
-      <%= @blueprint.description %>
-    </p>
-    <%= link_to 'Edit', edit_blueprint_path(@blueprint) %> |
-    <%= link_to 'Back', blueprints_path, "data-turbo-frame": "_top" %>
-  </div>
+  <%= render @blueprint %>
+  <%= link_to 'Edit', edit_blueprint_path(@blueprint) %> |
+  <%= link_to 'Back', blueprints_path, "data-turbo-frame": "_top" %>
 <% end %>
 
 

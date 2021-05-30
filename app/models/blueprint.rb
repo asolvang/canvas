@@ -2,4 +2,5 @@
 
 class Blueprint < ApplicationRecord
   has_many :rooms, dependent: :destroy
+  broadcasts
 end

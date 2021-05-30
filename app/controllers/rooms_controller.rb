@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class RoomsController < ApplicationController
-
   # GET /rooms/new
   def new
     @room = Room.new(blueprint_id: params[:blueprint_id])
