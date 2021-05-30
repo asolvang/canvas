@@ -234,8 +234,8 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
-      headings: ['Alegreya'],
-      body: ['Alegreya Sans'],
+      headings: ['Alegreya Sans'],
+      body: ['Alegreya'],
       sans: [
         'ui-sans-serif',
         'system-ui',

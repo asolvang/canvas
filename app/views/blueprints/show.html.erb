@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+<div>
+  <h1>
+    <%= @blueprint.name %>
+  </h1>
+
+  <p>
+    <%= @blueprint.description %>
+  </p>
+</div>
+
+<div>
+  <%= render @blueprint.rooms %>
+</div>
+
+
+
+
+<div>
+  <%= link_to "New room", new_blueprint_room_path(@blueprint) %>
+</div>
+
+
+
+
+
+
+<%= link_to 'Edit', edit_blueprint_path(@blueprint) %> |
+<%= link_to 'Back', blueprints_path %>

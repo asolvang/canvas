@@ -1,7 +1,7 @@
-h1, h2 {
-  @apply font-headings font-extrabold;
+h1, h2, h3, th {
+  @apply font-headings text-gray-800;
 };
 
-p, li, a, span, table, small, button  {
-  @apply font-body;
+p, li, a, span, td, small, button  {
+  @apply font-body text-gray-800;
 };

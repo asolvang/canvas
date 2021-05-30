@@ -26,4 +26,4 @@ AllCops:
     - 'bin/**/*'
     - 'tmp/**/*'
     - 'Guardfile'
-    - 'spec/rails_helper.rb'
+    - 'spec/**/*'

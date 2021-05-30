@@ -10,7 +10,20 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="flex flex-col w-full min-h-screen bg-gray-100">
+    <nav class="bg-gray-200 w-full grid">
+      <div class="container mx-auto py-2 px-4 grid grid-cols-2">
+        <div class="">Menu</div>
+        <div class="justify-self-end">
+          <%= link_to "Blueprints", blueprints_path %>
+        </div>
+      </div>
+    </nav>
+    <main class="container red-900 mx-auto py-2 px-4 flex-grow">
+      <%= yield %>
+    </main>
+    <footer class="">
+      Footer
+    </footer>
   </body>
 </html>
