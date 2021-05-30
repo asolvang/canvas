@@ -1,31 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<%= turbo_frame_tag "blueprint" do %>
+  <div>
+    <h1>
+      <%= @blueprint.name %>
+    </h1>
+    <p>
+      <%= @blueprint.description %>
+    </p>
+    <%= link_to 'Edit', edit_blueprint_path(@blueprint) %> |
+    <%= link_to 'Back', blueprints_path, "data-turbo-frame": "_top" %>
+  </div>
+<% end %>
 
-<div>
-  <h1>
-    <%= @blueprint.name %>
-  </h1>
 
-  <p>
-    <%= @blueprint.description %>
-  </p>
-</div>
-
-<div>
+<div class="mt-4">
   <%= render @blueprint.rooms %>
 </div>
 
 
-
-
-<div>
-  <%= link_to "New room", new_blueprint_room_path(@blueprint) %>
+<div class="mt-4 pt-4 border-t-2 border-gray-400">
+  <%= turbo_frame_tag "new_room", src: new_blueprint_room_path(@blueprint), target: "_top" %>
 </div>
-
-
-
-
-
-
-<%= link_to 'Edit', edit_blueprint_path(@blueprint) %> |
-<%= link_to 'Back', blueprints_path %>

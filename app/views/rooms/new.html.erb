@@ -1,5 +1,25 @@
 <h1>New Room</h1>
 
-<%= render 'form', room: @room %>
+<%= turbo_frame_tag "new_room", target: "_top" do %>
+  <%= form_with(model: [@room.blueprint, @room]) do |form| %>
 
-<%= link_to 'Back', rooms_path %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= form.label :room_number %>
+      <%= form.text_field :room_number %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>

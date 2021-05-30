@@ -1,62 +1,30 @@
 # frozen_string_literal: true
 
 class RoomsController < ApplicationController
-  before_action :set_room, only: %i[edit update destroy]
 
   # GET /rooms/new
   def new
     @room = Room.new(blueprint_id: params[:blueprint_id])
   end
 
-  # GET /rooms/1/edit
-  def edit; end
-
-  # POST /rooms or /rooms.json
+  # POST /rooms or
   def create
-    @room = Room.new(room_params)
+    @blueprint = Blueprint.find(params[:blueprint_id])
+    @room = @blueprint.rooms.create!(room_params)
 
     respond_to do |format|
       if @room.save
         format.html { redirect_to @room.blueprint, notice: 'Room was successfully created.' }
-        format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /rooms/1 or /rooms/1.json
-  def update
-    respond_to do |format|
-      if @room.update(room_params)
-        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
-        format.json { render :show, status: :ok, location: @room }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /rooms/1 or /rooms/1.json
-  def destroy
-    @room.destroy
-    respond_to do |format|
-      format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_room
-    @room = Room.find(params[:id])
-  end
-
   # Only allow a list of trusted parameters through.
   def room_params
-    params.require(:room).permit(:name, :description, :room_number, :blueprint_id)
+    params.require(:room).permit(:name, :description, :room_number)
   end
 end

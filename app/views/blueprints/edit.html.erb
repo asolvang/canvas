@@ -1,6 +1,8 @@
 <h1>Editing Blueprint</h1>
 
-<%= render 'form', blueprint: @blueprint %>
+<%= turbo_frame_tag "blueprint" do %>
+  <%= render 'form', blueprint: @blueprint %>
+<% end %>
 
 <%= link_to 'Show', @blueprint %> |
 <%= link_to 'Back', blueprints_path %>

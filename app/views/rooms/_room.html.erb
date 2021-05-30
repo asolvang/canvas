@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="border-2 border-green-400">
+<div <%= dom_id room %> class="border-t-2 border-gray-200">
   <p>
     <strong>Name:</strong>
     <%= room.name %>
@@ -14,12 +14,4 @@
     <strong>Room number:</strong>
     <%= room.room_number %>
   </p>
-
-  <p>
-    <strong>Blueprint:</strong>
-    <%= room.blueprint_id %>
-  </p>
-
-  <%= link_to 'Back', rooms_path %>
-
 </div>
