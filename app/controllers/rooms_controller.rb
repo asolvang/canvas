@@ -14,6 +14,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
+        format.turbo_stream
         format.html { redirect_to @room.blueprint, notice: 'Room was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
